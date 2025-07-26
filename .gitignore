@@ -1,0 +1,37 @@
+# Arquivos de ambiente virtual do Python
+venv/
+.venv/
+env/
+.env/
+activate
+pip-selfcheck.json
+
+# Cache e arquivos compilados do Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Arquivos de saída (imagens, vídeos, etc.)
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.mp4
+*.avi
+*.mov
+
+# Arquivos de configuração de IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de sistema operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de instalação e distribuição
+dist/
+build/
+*.egg-info/
