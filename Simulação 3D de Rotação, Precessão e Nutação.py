@@ -150,15 +150,16 @@ def animate(frame):
     return cone_plot, trail, axis_line, base_trail
 
 # --- Sliders para controle interativo ---
-    ax_slider_rot = fig.add_axes([0.25, 0.15, 0.65, 0.03])
-    slider_rot = Slider(ax_slider_rot, 'Vel. Rotação', 0.0, 100.0, valinit=omega_rot)
+ax_slider_rot = fig.add_axes([0.25, 0.15, 0.65, 0.03])
+slider_rot = Slider(ax_slider_rot, 'Vel. Rotação', 0.0, 100.0, valinit=omega_rot)
 
-    ax_slider_prec = fig.add_axes([0.25, 0.1, 0.65, 0.03])
-    slider_prec = Slider(ax_slider_prec, 'Vel. Precessão', 0.0, 10.0, valinit=omega_p)
+ax_slider_prec = fig.add_axes([0.25, 0.1, 0.65, 0.03])
+slider_prec = Slider(ax_slider_prec, 'Vel. Precessão', 0.0, 10.0, valinit=omega_p)
 
-    ax_slider_nut = fig.add_axes([0.25, 0.05, 0.65, 0.03])
-    slider_nut = Slider(ax_slider_nut, 'Vel. Nutação', 0.0, 50.0, valinit=omega_n)
+ax_slider_nut = fig.add_axes([0.25, 0.05, 0.65, 0.03])
+slider_nut = Slider(ax_slider_nut, 'Vel. Nutação', 0.0, 50.0, valinit=omega_n)
 
+# ESTA FUNÇÃO TAMBÉM FOI CORRIGIDA (REMOVIDO O RECUO)
 def update_sliders(val):
     """Função para atualizar as variáveis globais quando um slider é movido."""
     global omega_rot, omega_p, omega_n
@@ -174,7 +175,6 @@ slider_prec.on_changed(update_sliders)
 slider_nut.on_changed(update_sliders)
 
 # --- Cria e Inicia a Animação ---
-# blit=False é necessário pois estamos recriando o objeto trisurf a cada frame
 ani = FuncAnimation(fig, animate, frames=800, init_func=init, interval=dt*1000, blit=False)
 
 plt.show()
